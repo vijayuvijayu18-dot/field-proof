@@ -471,7 +471,7 @@ export async function signInWithOfficerCredentials(creds: {
   ) + 1000;
 
   const displayName = known?.name || creds.name?.trim() || email.split('@')[0].toUpperCase();
-  const operatorId = known?.operatorId || `OP-GOV-${emailHash}`;
+  const operatorId = known?.id || `OP-GOV-${emailHash}`;
   const badgeNumber = known?.badge || `GOV-ID-${emailHash}`;
   const role = known?.role || creds.role || 'Field Verification Officer';
   const unit = known?.unit || 'Field Drug Law Enforcement Division (SIH26231)';

@@ -452,7 +452,7 @@ export async function signInWithOfficerCredentials(creds: {
   }
 
   // Check known accounts
-  const known = getRegisteredOfficers().find((officer) => officer.emailOrPhonr.trim().toLowerCase() === email.toLowerCase());
+  const known = getRegisteredOfficers().find((officer) => officer.emailOrPhone.trim().toLowerCase() === email.toLowerCase());
   if (known) {
     if (password !== known.password) {
       throw new Error(`Authentication Failed: Invalid Security Passcode for officer account ${email}.`);

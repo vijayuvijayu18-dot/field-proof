@@ -45,7 +45,7 @@ export const RecordsScreen: React.FC<RecordsScreenProps> = ({
     records.length > 0 ? records[0].id : null
   );
 
-  const selectedRecord = filteredRecords.find(r => r.id === selectedRecordId) || filteredRecords[0] || records[0];
+  const selectedRecord = filteredRecords.find(r:FieldTestRecord) => r.id === selectedRecordId) || filteredRecords[0] || records[0];
 
   return (
     <div className="space-y-4 pb-16 lg:pb-6 font-sans">
@@ -91,13 +91,13 @@ export const RecordsScreen: React.FC<RecordsScreenProps> = ({
               className="w-full bg-[#0b0f19] border border-slate-700/80 rounded px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-sky-500 font-mono"
             >
               <option value="ALL">All Officers ({distinctOfficers.length})</option>
-              {distinctOfficers.map(o => (
+              {distinctOfficers.map((o: {id: string; name: string }) => (
                 <option key={o.id} value={o.id}>{o.name} ({o.id})</option>
               ))}
             </select>
 
             <div className="space-y-2 max-h-[70vh] overflow-y-auto pr-1">
-              {filteredRecords.map((r) => {
+              {filteredRecords.map((r:FieldTestRecord) => {
                 const isSelected = r.id === selectedRecord.id;
                 return (
                   <button

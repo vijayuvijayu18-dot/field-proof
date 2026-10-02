@@ -45,7 +45,7 @@ export const RecordsScreen: React.FC<RecordsScreenProps> = ({
     records.length > 0 ? records[0].id : null
   );
 
-  const selectedRecord = filteredRecords.find(r:FieldTestRecord) => r.id === selectedRecordId) || filteredRecords[0] || records[0];
+  const selectedRecord = filteredRecords.find((r) => r.id === selectedRecordId) ?? filteredRecords[0] ?? records[0] ?? null;
 
   return (
     <div className="space-y-4 pb-16 lg:pb-6 font-sans">

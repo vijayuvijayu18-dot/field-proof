@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { FieldTestRecord } from '../types';
 import { StatusBadge } from '../components/StatusBadge';
 import { EvidenceChain } from '../components/EvidenceChain';
